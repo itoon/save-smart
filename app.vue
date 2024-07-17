@@ -65,9 +65,9 @@
     <div class="container mx-auto px-4 pb-4">
       <h2 class="text-lg font-bold mb-1">ฝากที่ไหนบ้าง</h2>
       <div class="flex flex-col gap-2">
-        <template v-for="summary in bankCalculator">
+        <template v-for="(summary, index) in bankCalculator">
           <div
-            v-if="summary.saving > 0 || isShowInput"
+            v-if="index != 4 && (summary.saving > 0 || isShowInput)"
             class="border border-[#DFDFDF] p-4 bg-white rounded-lg flex gap-3"
           >
             <div>
