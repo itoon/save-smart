@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   ssr: false,
 
   app: {
-    baseURL: "/",
+    baseURL: "/codetraveler-saving",
     buildAssetsDir: "assets",
   },
 
