@@ -6,8 +6,8 @@ export default defineNuxtConfig({
   ssr: false,
 
   app: {
-    // baseURL: "/codeventure-saving",
-    // buildAssetsDir: "assets",
+    baseURL: "/",
+    buildAssetsDir: "assets",
   },
 
   postcss: {
@@ -17,5 +17,5 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/image"]
+  modules: ["@nuxt/image"],
 });
