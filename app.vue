@@ -95,7 +95,7 @@
                   <p class="font-bold">
                     {{ summary.name }}
                   </p>
-                  <div>
+                  <div class="hidden sm:inline-block">
                     <span
                       class="p-0.5 px-1 rounded-lg text-[10px] font-bold bg-green-300"
                     >
@@ -115,13 +115,16 @@
                   }}
                 </p>
                 <p class="text-[#A1A1A1] text-xs text-right">
-                  สัดส่วน {{ summary.ratio.toFixed(2) }}% | ดอกเบี้ย
-                  {{
-                    Intl.NumberFormat("th-TH", {
-                      style: "currency",
-                      currency: "THB",
-                    }).format(summary.totalInterest)
-                  }}
+                  <span> สัดส่วน {{ summary.ratio.toFixed(2) }}% </span>
+                  <span class="hidden sm:inline-block">
+                    | ดอกเบี้ย
+                    {{
+                      Intl.NumberFormat("th-TH", {
+                        style: "currency",
+                        currency: "THB",
+                      }).format(summary.totalInterest)
+                    }}
+                  </span>
                 </p>
               </div>
             </div>
