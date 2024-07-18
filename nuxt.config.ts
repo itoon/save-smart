@@ -4,10 +4,18 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
   ssr: false,
-
   app: {
     baseURL: "/codetraveler-saving",
     buildAssetsDir: "assets",
+    head: {
+      link: [
+        {
+          rel: "icon",
+          type: "image/png",
+          href: "/codetraveler-saving/favicon.ico",
+        },
+      ],
+    },
   },
 
   postcss: {
