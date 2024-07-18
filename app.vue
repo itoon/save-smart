@@ -33,7 +33,7 @@
         </label>
         <button
           class="bg-[#2969FF] py-3 text-white rounded-lg"
-          @click="calulate"
+          @click="calculate"
         >
           คำนวณ
         </button>
@@ -164,7 +164,7 @@ const isShowInput = ref(true);
 
 const bankCalculator = ref(banks);
 
-const calulate = () => {
+const calculate = () => {
   isShowInput.value = false;
   bankCalculator.value.forEach((bank) => {
     bank.saving = 0;
