@@ -73,9 +73,10 @@
     <div class="container px-4 mx-auto">
       <div class="mb-2">
         <h2 class="text-lg font-bold">ฝากที่ไหนบ้าง</h2>
-        <p class="text-xs">
-          Disclaimer: ข้อมูลที่ได้รับมาจากการคำนวณเป็นเพียงการประมาณการเท่านั้น
-        </p>
+        <div class="text-xs text-[#A1A1A1] bg-[#f5f5f5] p-2 rounded-lg">
+          <p>Disclaimer</p>
+          <p>ข้อมูลที่ได้รับมาจากการคำนวณเป็นเพียงการประมาณการเท่านั้น</p>
+        </div>
       </div>
       <div class="flex flex-col gap-2">
         <template v-for="(summary, index) in bankCalculator">
