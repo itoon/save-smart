@@ -1,7 +1,7 @@
 export const banks = [
   {
     //0
-    logo: "/bank/Dime.png",
+    logo: "/save-smart/bank/Dime.png",
     name: "Dime! Save",
     bank: "เกียรตินาคิน",
     saving: 0,
@@ -10,7 +10,7 @@ export const banks = [
   },
   {
     //1
-    logo: "/bank/TTB-ME-Save.png",
+    logo: "/save-smart/bank/TTB-ME-Save.png",
     name: "TTB ME Save",
     bank: "ธนาคารทหารไทยธนชาต",
     saving: 0,
@@ -19,7 +19,7 @@ export const banks = [
   },
   {
     //2
-    logo: "/bank/KKP-Start-Saving.png",
+    logo: "/save-smart/bank/KKP-Start-Saving.png",
     name: "KKP Start Saving",
     bank: "ธนาคารเกียรตินาคินภัทร",
     saving: 0,
@@ -28,7 +28,7 @@ export const banks = [
   },
   {
     //3
-    logo: "/bank/Chill-D.png",
+    logo: "/save-smart/bank/Chill-D.png",
     name: "CIMB Chill-D",
     bank: "ธนาคาร ซีไอเอ็มบี ไทย",
     saving: 0,
@@ -37,7 +37,7 @@ export const banks = [
   },
   {
     //4
-    logo: "/bank/KKP-Start-Saving.png",
+    logo: "/save-smart/bank/KKP-Start-Saving.png",
     name: "KKP Start Saving",
     bank: "ธนาคารเกียรตินาคินภัทร",
     saving: 0,
@@ -46,7 +46,7 @@ export const banks = [
   },
   {
     //5
-    logo: "/bank/Alpha-Saving.png",
+    logo: "/save-smart/bank/Alpha-Saving.png",
     name: "Alpha Saving",
     bank: "ธนาคารไทยเครดิต",
     saving: 0,
@@ -55,7 +55,7 @@ export const banks = [
   },
   {
     //6
-    logo: "/bank/Kept.png",
+    logo: "/save-smart/bank/Kept.png",
     name: "Kept",
     bank: "ธนาคารกรุงศรีอยุธยา",
     saving: 0,
@@ -64,7 +64,7 @@ export const banks = [
   },
   {
     //7
-    logo: "/bank/LH-B-You Wealth.png",
+    logo: "/save-smart/bank/LH-B-You Wealth.png",
     name: "LH B-You Wealth",
     bank: "ธนาคารแลนด์ แอนด์ เฮ้าส์",
     saving: 0,
@@ -73,7 +73,7 @@ export const banks = [
   },
   {
     //8
-    logo: "/bank/TTB-ME-Save.png",
+    logo: "/save-smart/bank/TTB-ME-Save.png",
     name: "TTB ME Save",
     bank: "ธนาคารทหารไทยธนชาต",
     saving: 0,
@@ -82,7 +82,7 @@ export const banks = [
   },
   {
     //9
-    logo: "/bank/CIMB-Speed D+.png",
+    logo: "/save-smart/bank/CIMB-Speed D+.png",
     name: "CIMB Speed D+",
     bank: "ธนาคาร ซีไอเอ็มบี ไทย",
     saving: 0,

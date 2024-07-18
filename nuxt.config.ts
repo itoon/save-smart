@@ -4,10 +4,19 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
   ssr: false,
-
   app: {
-    baseURL: "/",
+    baseURL: "/save-smart",
     buildAssetsDir: "assets",
+    head: {
+      title: "SaveSmart-เนิร์ดไฟแนนซ์ x CodeTraveler",
+      link: [
+        {
+          rel: "icon",
+          type: "image/png",
+          href: "/save-smart/favicon.ico",
+        },
+      ],
+    },
   },
 
   postcss: {
