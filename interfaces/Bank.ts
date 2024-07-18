@@ -5,5 +5,5 @@ export interface Bank {
   saving: number;
   ratio: number;
   interest: number;
+  totalInterest: number;
 }
-
