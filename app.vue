@@ -26,7 +26,7 @@
         >
           <input
             id="more2years"
-            v-model="isSaving2Year"
+            v-model="canSavingMore2Years"
             type="checkbox"
             class="h-4 w-4 rounded border-gray-300 text-[#2969FF] focus:ring-[#2969FF]"
             @keydown.enter="calculate"
@@ -58,8 +58,12 @@
             }}
           </h2>
         </div>
-        <p v-show="isSaving2Year" class="text-center">ฝากยาว มากกว่า 2 ปี</p>
-        <p v-show="!isSaving2Year" class="text-center">ฝากสั้น ไม่ถึง 2 ปี</p>
+        <p v-show="!canSavingMore2Years" class="text-center">
+          ฝากสั้น ไม่ถึง 2 ปี
+        </p>
+        <p v-show="canSavingMore2Years" class="text-center">
+          ฝากยาว มากกว่า 2 ปี
+        </p>
         <button
           class="border border-[#2969FF] py-3 text-[#2969FF] rounded-lg"
           @click="isShowInput = true"
@@ -185,8 +189,8 @@
 
 <script setup lang="ts">
 import { banks } from "~/data/banks";
-const saving = ref();
-const isSaving2Year = ref(false);
+const saving = ref(0);
+const canSavingMore2Years = ref(false);
 const isShowInput = ref(true);
 
 const bankCalculator = ref(banks);
@@ -301,19 +305,19 @@ const calculate = () => {
             const saveAlpha = 500000;
             if (remainSaving < saveAlpha) {
               bankCalculator.value[5].saving = remainSaving;
-              bankCalculator.value[5].ratio =
-                (saveKKPStep2 / saving.value) * 100;
+              bankCalculator.value[5].ratio =  (bankCalculator.value[5].saving / saving.value) * 100;
               bankCalculator.value[5].totalInterest = calculateTotalInterest(bankCalculator.value[5]);
 
               calculateSumTotalInterest();
               return;
             } else {
-              bankCalculator.value[5].saving = saveAlpha;
-              bankCalculator.value[5].ratio = (saveAlpha / saving.value) * 100;
-              bankCalculator.value[5].totalInterest = calculateTotalInterest(bankCalculator.value[5]);
-              remainSaving = remainSaving - saveAlpha;
+               bankCalculator.value[5].saving = saveAlpha;
+               bankCalculator.value[5].ratio =
+                 (bankCalculator.value[5].saving / saving.value) * 100;
+                 remainSaving = remainSaving - saveAlpha;
+               bankCalculator.value[5].totalInterest = calculateTotalInterest(bankCalculator.value[5]);
             }
-            if (remainSaving < 971000 && isSaving2Year.value) {
+            if (remainSaving < 971000 && canSavingMore2Years.value) {
               bankCalculator.value[6].saving = remainSaving;
               bankCalculator.value[6].ratio =
                 (remainSaving / saving.value) * 100;
@@ -338,7 +342,7 @@ const calculate = () => {
                 calculateSumTotalInterest();
                 return;
               }
-              if (isSaving2Year.value) {
+              if (canSavingMore2Years.value) {
                 // save to kept
                 bankCalculator.value[6].saving =
                   bankCalculator.value[6].saving + remainSaving;
