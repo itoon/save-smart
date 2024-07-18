@@ -1,6 +1,10 @@
-# Nuxt 3 Minimal Starter
+# SaveSmart
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+SaveSmart เป็นเครื่องมือที่ช่วยให้คุณเพิ่มดอกเบี้ยเงินฝากให้สูงสุด โดยการกระจายเงินฝากของคุณไปยังบัญชีธนาคารต่างๆ ตามอัตราดอกเบี้ยและเงื่อนไขของแต่ละบัญชี ที่มาจาก [เนิร์ดไฟแนนซ์](https://www.facebook.com/photo/?fbid=122135196230270713&set=a.122105441570270713). 
+
+<div style="text-align: center;">
+  <img src="public/other/flowchart.jpg" style="width: 500px" alt="Flow chart by เนิร์ดไฟแนนซ์">
+</div>
 
 ## Setup
 
@@ -72,4 +76,10 @@ yarn preview
 bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Contributors
+
+<div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+  <a href="https://github.com/itoon/save-smart/graphs/contributors" style="margin-left: 1rem;">
+    <img src="https://contrib.rocks/image?repo=itoon/save-smart" />
+  </a>
+</div>
