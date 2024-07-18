@@ -4,15 +4,13 @@
 
 @font-face {
   font-family: "LINESeedSans";
-  src: url("/codetraveler-saving/font/LINESeedSansTH_W_Rg.woff2")
-    format("woff2");
+  src: url("/save-smart/font/LINESeedSansTH_W_Rg.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "LINESeedSans";
-  src: url("/codetraveler-saving/font/LINESeedSansTH_W_Bd.woff2")
-    format("woff2");
+  src: url("/save-smart/font/LINESeedSansTH_W_Bd.woff2") format("woff2");
   font-weight: bold;
   font-style: bold;
 }
