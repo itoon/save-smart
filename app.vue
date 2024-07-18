@@ -95,7 +95,7 @@
                   <p class="font-bold">
                     {{ summary.name }}
                   </p>
-                  <div class="hidden sm:inline-block">
+                  <div class="hidden min-[375px]:block">
                     <span
                       class="p-0.5 px-1 rounded-lg text-[10px] font-bold bg-green-300"
                     >
@@ -115,9 +115,9 @@
                   }}
                 </p>
                 <p class="text-[#A1A1A1] text-xs text-right">
-                  <span> สัดส่วน {{ summary.ratio.toFixed(2) }}% </span>
-                  <span class="hidden sm:inline-block">
-                    | ดอกเบี้ย
+                  <!-- <span> สัดส่วน {{ summary.ratio.toFixed(2) }}% </span> -->
+                  <span>
+                    ดอกเบี้ย
                     {{
                       Intl.NumberFormat("th-TH", {
                         style: "currency",
@@ -133,7 +133,7 @@
       </div>
     </div>
     <div class="container px-4 pb-4 mx-auto">
-      <h2 class="mb-1 text-lg font-bold">ดอกเบี้ยที่จะได้รับ</h2>
+      <h2 class="mb-1 text-lg font-bold">ดอกเบี้ยที่จะได้รับโดยประมาณ</h2>
       <div class="border border-[#DFDFDF] p-4 bg-white rounded-lg flex gap-3">
         <div class="flex justify-between flex-1">
           <div class="flex flex-col gap-0.5">
