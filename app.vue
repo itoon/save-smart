@@ -2,7 +2,7 @@
   <div class="bg-[#2969FF] h-52">
     <div class="flex flex-col text-center gap-1 text-white py-4 pt-10">
       <h1 class="text-2xl font-bold">ฝากเงินที่ไหนดี ?</h1>
-      <p class="text-sm">เนิร์ดไฟแนนซ์ x CodeVenture</p>
+      <p class="text-sm">เนิร์ดไฟแนนซ์ x CodeTraveler</p>
     </div>
   </div>
   <div class="flex flex-col gap-5">
@@ -71,7 +71,7 @@
             class="border border-[#DFDFDF] p-4 bg-white rounded-lg flex gap-3"
           >
             <div>
-              <NuxtImg :src="summary.logo" class="w-10 h-10 rounded-lg" />
+              <img :src="summary.logo" class="w-10 h-10 rounded-lg" />
             </div>
             <div class="flex flex-1 justify-between">
               <div class="flex flex-col gap-0.5">
