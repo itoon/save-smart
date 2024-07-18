@@ -8,7 +8,18 @@
     </div>
     <div class="flex justify-between flex-1">
       <div class="flex flex-col gap-0.5">
-        <p class="text-sm font-bold">{{ summary.name }}</p>
+        <div class="flex items-center gap-1 text-sm">
+          <p class="font-bold">
+            {{ summary.name }}
+          </p>
+          <div class="hidden min-[375px]:block">
+            <span
+              class="p-0.5 px-1 rounded-lg text-[10px] font-bold bg-green-300"
+            >
+              {{ (summary.interest * 100).toFixed(2) }}%
+            </span>
+          </div>
+        </div>
         <p class="text-[#A1A1A1] text-xs">{{ summary.bank }}</p>
       </div>
       <div class="flex flex-col gap-0.5">
@@ -21,11 +32,16 @@
           }}
         </p>
         <p class="text-[#A1A1A1] text-xs text-right">
-			ดอกเบี้ย {{ Intl.NumberFormat("th-TH", {
-                      style: "currency",
-                      currency: "THB",
-                    }).format(summary.totalInterest)}} 
-
+          <!-- <span> สัดส่วน {{ summary.ratio.toFixed(2) }}% </span> -->
+          <span>
+            ดอกเบี้ย
+            {{
+              Intl.NumberFormat("th-TH", {
+                style: "currency",
+                currency: "THB",
+              }).format(summary.totalInterest)
+            }}
+          </span>
         </p>
       </div>
     </div>
@@ -39,6 +55,5 @@ defineProps<{
   summary: Bank;
   index: number;
   isShowInput: boolean;
-  
 }>();
 </script>
