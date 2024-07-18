@@ -15,7 +15,7 @@
           <input
             v-model="saving"
             placeholder="100000"
-            type="text"
+            type="number"
             class="border border-[#DFDFDF] py-3 px-4 w-full focus:outline-none focus:border-[#2969FF] rounded-lg"
           />
         </div>
@@ -71,7 +71,12 @@
       </div>
     </div>
     <div class="container px-4 mx-auto">
-      <h2 class="mb-1 text-lg font-bold">ฝากที่ไหนบ้าง</h2>
+      <div class="mb-2">
+        <h2 class="text-lg font-bold">ฝากที่ไหนบ้าง</h2>
+        <p class="text-xs">
+          Disclaimer: ข้อมูลที่ได้รับมาจากการคำนวณเป็นเพียงการประมาณการเท่านั้น
+        </p>
+      </div>
       <div class="flex flex-col gap-2">
         <template v-for="(summary, index) in bankCalculator">
           <div
