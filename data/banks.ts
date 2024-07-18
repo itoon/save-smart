@@ -1,4 +1,6 @@
-export const banks = [
+import type { Bank } from "~/interfaces/Bank";
+
+export const banks : Bank[] = [
   {
     //0
     logo: "/save-smart/bank/Dime.png",

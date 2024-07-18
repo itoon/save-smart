@@ -29,14 +29,10 @@
 </template>
 
 <script setup lang="ts">
+import { type Bank } from "../interfaces/Bank";
+
 defineProps<{ 
-	summary: {
-		logo: string;
-		name: string;
-		bank: string;
-		saving: number;
-		ratio: number;
-	};
+	summary: Bank;
 	index: number;
 	isShowInput: boolean;
 }>()
