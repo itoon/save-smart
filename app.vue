@@ -14,6 +14,7 @@
           <label for="saving" class="text-[#A1A1A1]">จำนวนเงินออม (บาท)</label>
           <input
             v-model="saving"
+            placeholder="100000"
             type="text"
             class="border border-[#DFDFDF] py-3 px-4 w-full focus:outline-none focus:border-[#2969FF] rounded-lg"
           />
@@ -153,7 +154,7 @@
 
 <script setup lang="ts">
 import { banks } from "~/data/banks";
-const saving = ref(0);
+const saving = ref();
 const isSaving2Year = ref(false);
 const isShowInput = ref(true);
 
