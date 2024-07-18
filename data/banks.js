@@ -7,6 +7,7 @@ export const banks = [
     saving: 0,
     ratio: 0,
     interest: 3 / 100,
+    totalInterest: 0,
   },
   {
     //1
@@ -16,6 +17,7 @@ export const banks = [
     saving: 0,
     ratio: 0,
     interest: 2.2 / 100,
+    totalInterest: 0,
   },
   {
     //2
@@ -25,6 +27,7 @@ export const banks = [
     saving: 0,
     ratio: 0,
     interest: 2.2 / 100,
+    totalInterest: 0,
   },
   {
     //3
@@ -34,6 +37,7 @@ export const banks = [
     saving: 0,
     ratio: 0,
     interest: 2.21 / 100,
+    totalInterest: 0,
   },
   {
     //4
@@ -43,6 +47,7 @@ export const banks = [
     saving: 0,
     ratio: 0,
     interest: 2 / 100,
+    totalInterest: 0,
   },
   {
     //5
@@ -52,6 +57,7 @@ export const banks = [
     saving: 0,
     ratio: 0,
     interest: 2 / 100,
+    totalInterest: 0,
   },
   {
     //6
@@ -61,6 +67,7 @@ export const banks = [
     saving: 0,
     ratio: 0,
     interest: 1.87 / 100,
+    totalInterest: 0,
   },
   {
     //7
@@ -70,6 +77,7 @@ export const banks = [
     saving: 0,
     ratio: 0,
     interest: 1.87 / 100,
+    totalInterest: 0,
   },
   {
     //8
@@ -79,6 +87,7 @@ export const banks = [
     saving: 0,
     ratio: 0,
     interest: 1.6 / 100,
+    totalInterest: 0,
   },
   {
     //9
@@ -88,5 +97,6 @@ export const banks = [
     saving: 0,
     ratio: 0,
     interest: 1.66 / 100,
+    totalInterest: 0,
   },
 ];
