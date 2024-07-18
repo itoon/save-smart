@@ -1,16 +1,4 @@
 <template>
-  <Script
-    data-name="BMC-Widget"
-    data-cfasync="false"
-    src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
-    data-id="songklodS"
-    data-description="Support me on Buy me a coffee!"
-    data-message="Thank you for your support"
-    data-color="#5F7FFF"
-    data-position="Right"
-    data-x_margin="18"
-    data-y_margin="18"
-  ></Script>
   <div class="bg-[#2969FF] h-52">
     <div class="flex flex-col text-center gap-1 text-white py-4 pt-10">
       <h1 class="text-2xl font-bold">ฝากเงินที่ไหนดี ?</h1>
@@ -124,6 +112,14 @@
         <img src="/CodeTraveler.png" class="w-5 h-5" />
         <p class="font-bold">CodeTraveler</p>
       </div>
+    </div>
+    <div>
+      <a href="https://www.buymeacoffee.com/songklodS" target="_blank">
+        <img
+          src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+          alt="Buy Me A Coffee"
+          class="w-auto h-8 mx-auto"
+      /></a>
     </div>
   </footer>
 </template>
