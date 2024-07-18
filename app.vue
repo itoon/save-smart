@@ -112,10 +112,14 @@
     </div>
     <div>
       <p class="text-xs">Developed By:</p>
-      <div class="flex justify-center gap-1">
+      <a
+        href="https://www.youtube.com/@codetraveler9432"
+        target="_blank"
+        class="flex justify-center gap-1"
+      >
         <img src="/CodeTraveler.png" class="w-5 h-5" />
         <p class="font-bold">CodeTraveler</p>
-      </div>
+      </a>
     </div>
     <div class="fixed right-4 bottom-4">
       <a
