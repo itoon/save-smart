@@ -1,4 +1,16 @@
 <template>
+  <Script
+    data-name="BMC-Widget"
+    data-cfasync="false"
+    src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+    data-id="songklodS"
+    data-description="Support me on Buy me a coffee!"
+    data-message="Thank you for your support"
+    data-color="#5F7FFF"
+    data-position="Right"
+    data-x_margin="18"
+    data-y_margin="18"
+  ></Script>
   <div class="bg-[#2969FF] h-52">
     <div class="flex flex-col text-center gap-1 text-white py-4 pt-10">
       <h1 class="text-2xl font-bold">ฝากเงินที่ไหนดี ?</h1>
@@ -62,7 +74,7 @@
         </button>
       </div>
     </div>
-    <div class="container mx-auto px-4 pb-4">
+    <div class="container mx-auto px-4">
       <h2 class="text-lg font-bold mb-1">ฝากที่ไหนบ้าง</h2>
       <div class="flex flex-col gap-2">
         <template v-for="(summary, index) in bankCalculator">
@@ -97,6 +109,23 @@
       </div>
     </div>
   </div>
+  <footer class="container mx-auto text-center flex flex-col gap-1 py-2">
+    <div>
+      <a
+        href="https://www.facebook.com/permalink.php?story_fbid=pfbid07qpqzy8TA8s2qUi1kPYqYZdhsjct2LjJRbb16JRhbt8dnHWsqhAeVxDffskZ538Yl&id=61558121405445&rdid=pc5pJgOCanjpDqzx"
+        target="_blank"
+        class="text-[#2969FF] text-sm hover:underline"
+        >อ่านโพสต์ต้นฉบับของ เนิร์ดไฟแนนซ์ คลิก</a
+      >
+    </div>
+    <div>
+      <p class="text-xs">Developed By:</p>
+      <div class="flex gap-1 justify-center">
+        <img src="/CodeTraveler.png" class="w-5 h-5" />
+        <p class="font-bold">CodeTraveler</p>
+      </div>
+    </div>
+  </footer>
 </template>
 
 <script setup lang="ts">
