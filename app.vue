@@ -92,7 +92,7 @@
                   }}
                 </p>
                 <p class="text-[#A1A1A1] text-xs text-right">
-                  {{ summary.ratio.toFixed(2) }}%
+                  สัดส่วน {{ summary.ratio.toFixed(2) }}%
                 </p>
               </div>
             </div>
