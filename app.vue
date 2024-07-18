@@ -92,7 +92,10 @@
                   }}
                 </p>
                 <p class="text-[#A1A1A1] text-xs text-right">
-                  สัดส่วน {{ summary.ratio.toFixed(2) }}%
+                  สัดส่วน {{ summary.ratio.toFixed(2) }}% | ดอกเบี้ย {{ Intl.NumberFormat("th-TH", {
+                      style: "currency",
+                      currency: "THB",
+                    }).format(summary.totalInterest)}} 
                 </p>
               </div>
             </div>
@@ -164,54 +167,67 @@ const isShowInput = ref(true);
 
 const bankCalculator = ref(banks);
 
+const calculateTotalInterest = (bank: typeof banks[0]) => bank.saving * bank.interest;
+
 const calculate = () => {
   isShowInput.value = false;
   bankCalculator.value.forEach((bank) => {
     bank.saving = 0;
     bank.ratio = 0;
+    bank.totalInterest = 0;
   });
   const saveDime = 10000;
   let remainSaving = 0;
   if (saving.value < saveDime) {
     bankCalculator.value[0].saving = saving.value;
     bankCalculator.value[0].ratio = (saving.value / saving.value) * 100;
+    bankCalculator.value[0].totalInterest = calculateTotalInterest(bankCalculator.value[0]);
   } else {
     remainSaving = saving.value - saveDime;
     bankCalculator.value[0].saving = saveDime;
     bankCalculator.value[0].ratio = (saveDime / saving.value) * 100;
+    bankCalculator.value[0].totalInterest = calculateTotalInterest(bankCalculator.value[0]);
+
     const saveTTBME = 5833;
     if (remainSaving < saveTTBME) {
       bankCalculator.value[1].saving = remainSaving;
       bankCalculator.value[1].ratio = (remainSaving / saving.value) * 100;
+      bankCalculator.value[1].totalInterest = calculateTotalInterest(bankCalculator.value[1]);
       return;
     } else {
       const saveKKP = 10000;
       if (remainSaving < saveKKP) {
         bankCalculator.value[2].saving = remainSaving;
         bankCalculator.value[2].ratio = (remainSaving / saving.value) * 100;
+        bankCalculator.value[2].totalInterest = calculateTotalInterest(bankCalculator.value[2]);
         return;
       } else {
         bankCalculator.value[2].saving = saveKKP;
         bankCalculator.value[2].ratio = (saveKKP / saving.value) * 100;
+        bankCalculator.value[2].totalInterest = calculateTotalInterest(bankCalculator.value[2]);
         remainSaving = remainSaving - saveKKP;
         const saveChillD = 100000;
         if (remainSaving < saveChillD) {
           bankCalculator.value[1].saving = remainSaving;
           bankCalculator.value[1].ratio = (remainSaving / saving.value) * 100;
+          bankCalculator.value[1].totalInterest = calculateTotalInterest(bankCalculator.value[1]);
           return;
         } else {
           bankCalculator.value[3].saving = saveChillD;
           bankCalculator.value[3].ratio = (saveChillD / saving.value) * 100;
+          bankCalculator.value[3].totalInterest = calculateTotalInterest(bankCalculator.value[3]);
           remainSaving = remainSaving - saveChillD;
           const saveTTBMEStep2 = 100000;
           if (remainSaving < saveTTBMEStep2) {
             bankCalculator.value[1].saving = remainSaving;
             bankCalculator.value[1].ratio = (remainSaving / saving.value) * 100;
+            bankCalculator.value[1].totalInterest = calculateTotalInterest(bankCalculator.value[1]);
             return;
           } else {
             bankCalculator.value[1].saving = saveTTBMEStep2;
             bankCalculator.value[1].ratio =
               (saveTTBMEStep2 / saving.value) * 100;
+            bankCalculator.value[1].totalInterest = calculateTotalInterest(bankCalculator.value[1]);
             remainSaving = remainSaving - saveTTBMEStep2;
             const saveKKPStep2 = 40000;
             if (remainSaving < saveKKPStep2) {
@@ -223,6 +239,7 @@ const calculate = () => {
                 bankCalculator.value[2].saving + remainSaving;
               bankCalculator.value[2].ratio =
                 (remainSaving / saving.value) * 100;
+              bankCalculator.value[2].totalInterest = calculateTotalInterest(bankCalculator.value[2]);
               return;
             } else {
               // bankCalculator.value[4].saving = saveKKPStep2;
@@ -233,6 +250,7 @@ const calculate = () => {
                 bankCalculator.value[2].saving + saveKKPStep2;
               bankCalculator.value[2].ratio =
                 (bankCalculator.value[2].saving / saving.value) * 100;
+              bankCalculator.value[2].totalInterest = calculateTotalInterest(bankCalculator.value[2]);
               remainSaving = remainSaving - saveKKPStep2;
             }
             const saveAlpha = 500000;
@@ -240,27 +258,33 @@ const calculate = () => {
               bankCalculator.value[5].saving = remainSaving;
               bankCalculator.value[5].ratio =
                 (saveKKPStep2 / saving.value) * 100;
+              bankCalculator.value[5].totalInterest = calculateTotalInterest(bankCalculator.value[5]);
               return;
             } else {
               bankCalculator.value[5].saving = saveAlpha;
               bankCalculator.value[5].ratio = (saveAlpha / saving.value) * 100;
+              bankCalculator.value[5].totalInterest = calculateTotalInterest(bankCalculator.value[5]);
               remainSaving = remainSaving - saveAlpha;
             }
             if (remainSaving < 971000 && isSaving2Year.value) {
               bankCalculator.value[6].saving = remainSaving;
               bankCalculator.value[6].ratio =
                 (remainSaving / saving.value) * 100;
+              bankCalculator.value[6].totalInterest = calculateTotalInterest(bankCalculator.value[6]);
               return;
             } else {
               const saveHL = 1000000;
               if (remainSaving > saveHL) {
                 bankCalculator.value[7].saving = saveHL;
                 bankCalculator.value[7].ratio = (saveHL / saving.value) * 100;
+                bankCalculator.value[7].totalInterest = calculateTotalInterest(bankCalculator.value[7]);
+
                 remainSaving = remainSaving - saveHL;
               } else {
                 bankCalculator.value[7].saving = remainSaving;
                 bankCalculator.value[7].ratio =
                   (remainSaving / saving.value) * 100;
+                bankCalculator.value[7].totalInterest = calculateTotalInterest(bankCalculator.value[7]);
                 return;
               }
               if (isSaving2Year.value) {
@@ -269,6 +293,7 @@ const calculate = () => {
                   bankCalculator.value[6].saving + remainSaving;
                 bankCalculator.value[6].ratio =
                   (bankCalculator.value[6].saving / saving.value) * 100;
+                bankCalculator.value[6].totalInterest = calculateTotalInterest(bankCalculator.value[6]);
                 return;
               } else {
                 if (remainSaving < 385000) {
@@ -276,12 +301,14 @@ const calculate = () => {
                   bankCalculator.value[8].saving = remainSaving;
                   bankCalculator.value[8].ratio =
                     (remainSaving / saving.value) * 100;
+                  bankCalculator.value[8].totalInterest = calculateTotalInterest(bankCalculator.value[8]);
                   return;
                 } else {
                   // save CIMB Speed D+
                   bankCalculator.value[9].saving = remainSaving;
                   bankCalculator.value[9].ratio =
                     (remainSaving / saving.value) * 100;
+                  bankCalculator.value[9].totalInterest = calculateTotalInterest(bankCalculator.value[9]);
                   return;
                 }
               }
