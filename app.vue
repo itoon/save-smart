@@ -56,8 +56,8 @@
             }}
           </h2>
         </div>
-        <p v-show="isSaving2Year" class="text-center">ฝากสั้น ไม่ถึง 2 ปี</p>
-        <p v-show="!isSaving2Year" class="text-center">ฝากยาว มากกว่า 2 ปี</p>
+        <p v-show="isSaving2Year" class="text-center">ฝากยาว มากกว่า 2 ปี</p>
+        <p v-show="!isSaving2Year" class="text-center">ฝากสั้น ไม่ถึง 2 ปี</p>
         <button
           class="border border-[#2969FF] py-3 text-[#2969FF] rounded-lg"
           @click="isShowInput = true"
