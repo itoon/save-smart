@@ -79,9 +79,20 @@ const isShowInput = ref(true);
 const bankCalculator = ref(banks);
 const showInput = () => {
   isShowInput.value = true;
+  sumTotalInterest.value = 0;
+  resetBanksValue();
 };
 
 const sumTotalInterest = ref(0);
+
+const resetBanksValue = () => {
+  bankCalculator.value = bankCalculator.value.map(bank => ({
+    ...bank,
+    saving: 0,
+    ratio: 0,
+    totalInterest: 0
+  }));
+}
 
 const calculateSumTotalInterest = () => {
   sumTotalInterest.value = bankCalculator.value.reduce(
