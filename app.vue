@@ -46,6 +46,12 @@
             <p class="text-[#A1A1A1] text-xs">
               ดอกเบี้ยรวมทุกธนาคารหากฝากเงิน 1 ปี
             </p>
+            <p
+              v-if="sumTotalInterest > 20000"
+              class="text-[#A1A1A1] text-xs"
+            >
+              *หากยอดรวมดอกเบี้ยมากกว่า 20,000 บาท ต้องเสียภาษีดอกเบี้ย 15%
+            </p>
           </div>
           <div class="flex flex-col gap-0.5">
             <p class="text-sm font-bold text-right">
@@ -56,7 +62,17 @@
                 }).format(sumTotalInterest)
               }}
             </p>
-            <p class="text-[#A1A1A1] text-xs text-right"></p>
+            <p
+              v-if="sumTotalInterest > 20000"
+              class="text-right text-xs text-[#A1A1A1]"
+            >ดอกเบี้ยหลังหักภาษี
+              {{
+                Intl.NumberFormat("th-TH", {
+                  style: "currency",
+                  currency: "THB",
+                }).format(sumTotalInterest - (sumTotalInterest * 0.15))
+              }}
+            </p>
           </div>
         </div>
       </div>
