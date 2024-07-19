@@ -42,7 +42,12 @@
       <div class="border border-[#DFDFDF] p-4 bg-white rounded-lg flex gap-3">
         <div class="flex justify-between flex-1">
           <div class="flex flex-col gap-0.5">
-            <p class="text-sm font-bold">ดอกเบี้ยรวมทุกธนาคาร</p>
+            <div class="flex items-center gap-1 text-sm">
+              <p class="text-sm font-bold">ดอกเบี้ยรวมทุกธนาคาร</p>
+              <span v-if="!isShowInput" class="p-0.5 px-1 rounded-lg text-[10px] font-bold bg-green-300">
+              {{ ((sumTotalInterest/saving)*100).toFixed(2) }}%
+              </span>
+            </div>
             <p class="text-[#A1A1A1] text-xs">
               ดอกเบี้ยรวมทุกธนาคารหากฝากเงิน 1 ปี
             </p>
