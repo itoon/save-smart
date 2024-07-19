@@ -1,7 +1,7 @@
 <template>
   <footer class="p-2 py-4 text-center bg-[#2969FF]">
     <div
-      class="container flex flex-col items-center gap-4 mx-auto sm:justify-end sm:flex-row"
+      class="container flex flex-col items-center gap-1 mx-auto sm:justify-end sm:flex-row"
     >
       <a
         href="https://www.facebook.com/permalink.php?story_fbid=pfbid07qpqzy8TA8s2qUi1kPYqYZdhsjct2LjJRbb16JRhbt8dnHWsqhAeVxDffskZ538Yl&id=61558121405445&rdid=pc5pJgOCanjpDqzx"
@@ -25,7 +25,7 @@
           Developed by
           <br />
           <span class="inline-flex items-center gap-1 text-2xl font-bold">
-            <img src="../public/CodeTraveler.png" class="w-5 h-5" />
+            <img src="/CodeTraveler.png" class="w-5 h-5" />
             CodeTraveler
           </span>
         </p>
