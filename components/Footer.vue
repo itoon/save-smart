@@ -7,7 +7,7 @@
         <a
           href="https://www.facebook.com/permalink.php?story_fbid=pfbid07qpqzy8TA8s2qUi1kPYqYZdhsjct2LjJRbb16JRhbt8dnHWsqhAeVxDffskZ538Yl&id=61558121405445&rdid=pc5pJgOCanjpDqzx"
           target="_blank"
-          class="bg-[#2969FF] flex items-center max-w-xs justify-center w-full text-white"
+          class="flex items-center justify-center w-full max-w-xs mx-auto text-white"
         >
           <p>
             อ่านโพสต์ต้นฉบับของ
@@ -22,7 +22,7 @@
         <a
           href="https://www.youtube.com/@codetraveler9432"
           target="_blank"
-          class="flex items-center text-white max-w-xs justify-center w-full gap-1 bg-[#2969FF"
+          class="flex items-center justify-center w-full max-w-xs gap-1 mx-auto text-white"
         >
           <p>
             Developed by
