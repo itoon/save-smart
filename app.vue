@@ -44,8 +44,11 @@
           <div class="flex flex-col gap-0.5">
             <div class="flex items-center gap-1 text-sm">
               <p class="text-sm font-bold">ดอกเบี้ยรวมทุกธนาคาร</p>
-              <span v-if="!isShowInput" class="p-0.5 px-1 rounded-lg text-[10px] font-bold bg-green-300">
-              {{ ((sumTotalInterest/saving)*100).toFixed(2) }}%
+              <span
+                v-if="!isShowInput"
+                class="p-0.5 px-1 rounded-lg text-[10px] font-bold bg-green-300"
+              >
+                {{ ((sumTotalInterest / saving) * 100).toFixed(2) }}%
               </span>
             </div>
             <p class="text-[#A1A1A1] text-xs">
@@ -72,27 +75,23 @@
 
 <script setup lang="ts">
 import { banks } from "~/data/banks";
+
 const saving = ref(0);
 const canSavingMore2Years = ref(false);
 const isShowInput = ref(true);
-
 const bankCalculator = ref(banks);
+const initialBank = JSON.parse(JSON.stringify(banks));
 const showInput = () => {
   isShowInput.value = true;
-  sumTotalInterest.value = 0;
   resetBanksValue();
 };
 
 const sumTotalInterest = ref(0);
 
 const resetBanksValue = () => {
-  bankCalculator.value = bankCalculator.value.map(bank => ({
-    ...bank,
-    saving: 0,
-    ratio: 0,
-    totalInterest: 0
-  }));
-}
+  bankCalculator.value = initialBank;
+  sumTotalInterest.value = 0;
+};
 
 const calculateSumTotalInterest = () => {
   sumTotalInterest.value = bankCalculator.value.reduce(
