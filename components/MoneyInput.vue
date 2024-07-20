@@ -30,14 +30,22 @@
       >
         คำนวณ
       </button>
+      <div
+        class="text-xs text-[#A1A1A1] bg-[#f5f5f5] p-2 text-center rounded-lg"
+      >
+        <b>Disclaimer</b>
+        ข้อมูลที่ได้เป็นเพียงการประมาณการเท่านั้น
+      </div>
     </div>
-  </div>    
+  </div>
 </template>
 
 <script setup lang="ts">
 const emits = defineEmits(["calculate"]);
 const saving = defineModel("saving", { type: Number });
-const canSavingMore2Years = defineModel("canSavingMore2Years", { type: Boolean });
+const canSavingMore2Years = defineModel("canSavingMore2Years", {
+  type: Boolean,
+});
 
 function calculate() {
   emits("calculate");

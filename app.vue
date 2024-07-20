@@ -20,24 +20,6 @@
       @showInput="showInput"
     />
     <div class="container px-4 mx-auto">
-      <div class="mb-2">
-        <h2 class="text-lg font-bold">ฝากที่ไหนบ้าง</h2>
-        <div class="text-xs text-[#A1A1A1] bg-[#f5f5f5] p-2 rounded-lg">
-          <p>Disclaimer</p>
-          <p>ข้อมูลที่ได้รับมาจากการคำนวณเป็นเพียงการประมาณการเท่านั้น</p>
-        </div>
-      </div>
-      <div class="flex flex-col gap-2">
-        <BankItem
-          v-for="(summary, index) in bankCalculator"
-          :key="index"
-          :index="index"
-          :summary="summary"
-          :isShowInput="isShowInput"
-        />
-      </div>
-    </div>
-    <div class="container px-4 pb-4 mx-auto">
       <h2 class="mb-1 text-lg font-bold">ดอกเบี้ยที่จะได้รับโดยประมาณ</h2>
       <div class="border border-[#DFDFDF] p-4 bg-white rounded-lg flex gap-3">
         <div class="flex justify-between flex-1">
@@ -54,10 +36,7 @@
             <p class="text-[#A1A1A1] text-xs">
               ดอกเบี้ยรวมทุกธนาคารหากฝากเงิน 1 ปี
             </p>
-            <p
-              v-if="sumTotalInterest > 20000"
-              class="text-[#A1A1A1] text-xs"
-            >
+            <p v-if="sumTotalInterest > 20000" class="text-[#A1A1A1] text-xs">
               *หากยอดรวมดอกเบี้ยมากกว่า 20,000 บาท ต้องเสียภาษีดอกเบี้ย 15%
             </p>
           </div>
@@ -73,16 +52,31 @@
             <p
               v-if="sumTotalInterest > 20000"
               class="text-right text-xs text-[#A1A1A1]"
-            >ดอกเบี้ยหลังหักภาษี
+            >
+              ดอกเบี้ยหลังหักภาษี
               {{
                 Intl.NumberFormat("th-TH", {
                   style: "currency",
                   currency: "THB",
-                }).format(sumTotalInterest - (sumTotalInterest * 0.15))
+                }).format(sumTotalInterest - sumTotalInterest * 0.15)
               }}
             </p>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="container px-4 pb-4 mx-auto">
+      <div class="mb-2">
+        <h2 class="text-lg font-bold">ฝากที่ไหนบ้าง</h2>
+      </div>
+      <div class="flex flex-col gap-2">
+        <BankItem
+          v-for="(summary, index) in bankCalculator"
+          :key="index"
+          :index="index"
+          :summary="summary"
+          :isShowInput="isShowInput"
+        />
       </div>
     </div>
   </div>
