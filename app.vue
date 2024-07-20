@@ -19,8 +19,13 @@
       :isShowInput="isShowInput"
       @showInput="showInput"
     />
-    <div class="container px-4 mx-auto">
-      <h2 class="mb-1 text-lg font-bold">ดอกเบี้ยที่จะได้รับโดยประมาณ</h2>
+    <div class="container px-4 mx-auto" v-if="!isShowInput">
+      <div class="mb-2">
+        <h2 class="text-lg font-bold">
+          ดอกเบี้ยรวมโดยประมาณ (หากฝากเงิน 1 ปี)
+        </h2>
+        <!-- <p class="text-[#A1A1A1] text-xs">ดอกเบี้ยรวมหากฝากเงิน 1 ปี</p> -->
+      </div>
       <div class="border border-[#DFDFDF] p-4 bg-white rounded-lg flex gap-3">
         <div class="flex justify-between flex-1">
           <div class="flex flex-col gap-0.5">
@@ -33,12 +38,13 @@
                 {{ ((sumTotalInterest / saving) * 100).toFixed(2) }}%
               </span>
             </div>
-            <p class="text-[#A1A1A1] text-xs">
-              ดอกเบี้ยรวมทุกธนาคารหากฝากเงิน 1 ปี
-            </p>
-            <p v-if="sumTotalInterest > 20000" class="text-[#A1A1A1] text-xs">
-              *หากยอดรวมดอกเบี้ยมากกว่า 20,000 บาท ต้องเสียภาษีดอกเบี้ย 15%
-            </p>
+            <div v-if="sumTotalInterest > 20000">
+              <p class="text-[#A1A1A1] text-xs">
+                <!-- *กรณีดอกเบี้ยมากกว่า ฿20,000 เสียภาษี 15% -->
+                หัก ภาษี 15% (ดอกเบี้ยเกิ฿20,000)
+              </p>
+              <p class="text-[#A1A1A1] text-xs">ดอกเบี้ยหลังหักภาษี</p>
+            </div>
           </div>
           <div class="flex flex-col gap-0.5">
             <p class="text-sm font-bold text-right">
@@ -53,7 +59,17 @@
               v-if="sumTotalInterest > 20000"
               class="text-right text-xs text-[#A1A1A1]"
             >
-              ดอกเบี้ยหลังหักภาษี
+              {{
+                Intl.NumberFormat("th-TH", {
+                  style: "currency",
+                  currency: "THB",
+                }).format(sumTotalInterest * 0.15)
+              }}
+            </p>
+            <p
+              v-if="sumTotalInterest > 20000"
+              class="text-right text-xs text-[#A1A1A1]"
+            >
               {{
                 Intl.NumberFormat("th-TH", {
                   style: "currency",

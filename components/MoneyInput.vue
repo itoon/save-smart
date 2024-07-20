@@ -30,12 +30,12 @@
       >
         คำนวณ
       </button>
-      <div
+      <!-- <div
         class="text-xs text-[#A1A1A1] bg-[#f5f5f5] p-2 text-center rounded-lg"
       >
         <b>Disclaimer</b>
-        ข้อมูลที่ได้เป็นเพียงการประมาณการเท่านั้น
-      </div>
+        ข้อมูลที่ได้จากการคำนวณเป็นเพียงการประมาณการเท่านั้น
+      </div> -->
     </div>
   </div>
 </template>
